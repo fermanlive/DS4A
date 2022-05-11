@@ -4,9 +4,12 @@ WORKDIR /OCR
 
 COPY  . /OCR
 
-RUN apt-get install poppler-utils
 RUN apt-get update
-RUN apt-get install libleptonica-dev tesseract-ocr tesseract-ocr-dev libtesseract-dev python3-pil tesseract-ocr-eng tesseract-ocr-script-latn
+## flag -y is for said yes
+RUN apt-get install poppler-utils -y
+RUN apt-get install tesseract-ocr -y
+RUN apt-get install libtesseract-dev -y
+RUN apt-get install tesseract-ocr-spa -y
 
 RUN python3 -m pip install -U pip
 
