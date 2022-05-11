@@ -19,8 +19,10 @@ Antes de ejecutar:
 chmod +x ./commands/flush_and_create.sh 
 chmod +x ./commands/install.sh 
 
-Ejecutar 
+Installar depedencias 
 ./commands/install.sh 
+
+Ejecutar
 
 
 Docker 
