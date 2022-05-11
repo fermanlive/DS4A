@@ -16,4 +16,4 @@ RUN python3 -m pip install -U pip
 RUN pip install -r requirements.txt
 
 
-RUN python3 app.py
+#RUN python3 app.py
