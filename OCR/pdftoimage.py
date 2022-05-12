@@ -1,5 +1,7 @@
 from pdf2image import convert_from_path
 import os
+from storage import upload_to_bucket
+
 
 def pdf2image(routefile:str,filename:str):
     # Store Pdf with convert_from_path function
@@ -10,8 +12,12 @@ def pdf2image(routefile:str,filename:str):
         parent_dir = "output_images"
         directory = filename[:-4]
         create_dir(parent_dir,directory)
-        images[i].save(f'{parent_dir}/{directory}/page'+ str(i) +'.jpg', 'JPEG') 
+        route = f'{parent_dir}/{directory}/page'+ str(i) 
+        extension='.jpg'
+        images[i].save(route+extension, 'JPEG') 
+        upload_to_bucket(route,extension)
     return f'{directory}'
+    
 
 def create_dir(parent_dir:str,directory:str):
     path = os.path.join(parent_dir, directory)
