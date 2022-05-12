@@ -6,4 +6,6 @@ client = storage.Client()
 bucket = client.get_bucket('ds4a-tierras')
 
 def upload_to_bucket(route:str, extension:str) -> None:
-    bucket.blob(route).upload_from_file(route+extension)
+    route_bucket = route+extension
+    blob = bucket.blob(route_bucket)
+    blob.upload_from_filename(route_bucket)
