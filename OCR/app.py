@@ -32,13 +32,13 @@ def download_ocr_gcp(list_images: list) -> None:
         text = search_image('output_images/'+dir_images)
         route = f'output_txt/{dir_images}'
         extension = ".txt"
-        with open(route+extension,"w+") as f:
-            print(f"Ready to save the text for file: {dir_images}")
-            print('text: ', text)
-            json_result = json.dumps(text)
-            print('json_result: ', json_result)
-            f.write(json_result)
-            print(f"The {dir_images}.txt was saved !!")
+        file = codecs.open(route+extension, "w+", "utf-8")
+        print(f"Ready to save the text for file: {dir_images}")
+        print('text: ', text)
+        json_result = json.dumps(text)
+        print('json_result: ', json_result)
+        file.write(json_result)
+        print(f"The {dir_images}.txt was saved !!")
         upload_to_bucket(route,extension)
         shutil.rmtree('output_images/'+dir_images)
         print(f"The {dir_images} was delete !!")
