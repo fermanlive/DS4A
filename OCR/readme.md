@@ -35,7 +35,7 @@ Ahora la imagen que creamos es de nombre "OCR" que se encuentra delineada con la
 ![image docker](./images/Picture2.png)
 
 Entonces ahora ejecutamos donde el CONTAINER_ID es el obtenido anteriormente,
-`` docker cp CONTAINER_ID:./OCR/ouput_txt/ ouput_txt/  ``
+`` docker cp CONTAINER_ID:./OCR/output_txt/ output_txt/  ``
 
 deberia ser el comando de esta manera :
-`` docker cp 339da2af03a0:./OCR/ouput_txt/ ouput_txt/  ``
+`` docker cp 339da2af03a0:./OCR/output_txt/ ouput_txt/  ``
