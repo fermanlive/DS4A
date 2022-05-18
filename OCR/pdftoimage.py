@@ -15,7 +15,7 @@ def pdf2image(routefile:str,filename:str):
         route = f'{parent_dir}/{directory}/page'+ str(i) 
         extension='.jpg'
         images[i].save(route+extension, 'JPEG') 
-        upload_to_bucket(route,extension)
+        # upload_to_bucket(route,extension)
     return f'{directory}'
     
 
