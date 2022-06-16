@@ -1,0 +1,263 @@
+{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 1855,
+    "features": 1
+  },
+  "language": "es",
+  "keywords": [
+    {
+      "text": "derecho fundamental",
+      "relevance": 0.613159,
+      "count": 1
+    },
+    {
+      "text": "grupo familiar",
+      "relevance": 0.603407,
+      "count": 1
+    },
+    {
+      "text": "YULIANA RIOS",
+      "relevance": 0.594801,
+      "count": 1
+    },
+    {
+      "text": "UNIDAD ADMINISTRATIVA ESPECIAL",
+      "relevance": 0.592494,
+      "count": 1
+    },
+    {
+      "text": "REGISTRO ÚNICO DE VÍCTIMAS",
+      "relevance": 0.580174,
+      "count": 1
+    },
+    {
+      "text": "víctimas del conflicto armado",
+      "relevance": 0.572429,
+      "count": 1
+    },
+    {
+      "text": "FANY ZULAY RIO",
+      "relevance": 0.568542,
+      "count": 1
+    },
+    {
+      "text": "REPARACIÓN INTEGRAL",
+      "relevance": 0.559742,
+      "count": 1
+    },
+    {
+      "text": "notificación de la presente providencia",
+      "relevance": 0.555541,
+      "count": 1
+    },
+    {
+      "text": "restitución de tierras",
+      "relevance": 0.547798,
+      "count": 1
+    },
+    {
+      "text": "CALOTO CAUCA",
+      "relevance": 0.537488,
+      "count": 1
+    },
+    {
+      "text": "BEA IRA",
+      "relevance": 0.537222,
+      "count": 1
+    },
+    {
+      "text": "Dirección Matricula Inmobiliaria",
+      "relevance": 0.513606,
+      "count": 1
+    },
+    {
+      "text": "informes detallados",
+      "relevance": 0.506973,
+      "count": 1
+    },
+    {
+      "text": "apertura de un nuevo folio",
+      "relevance": 0.505933,
+      "count": 1
+    },
+    {
+      "text": "nietos ARIANNA SOFIA GALVIS RIO T.",
+      "relevance": 0.494306,
+      "count": 1
+    },
+    {
+      "text": "consecuencia",
+      "relevance": 0.492279,
+      "count": 1
+    },
+    {
+      "text": "Oficina de Registro de Instrumentos Públicos",
+      "relevance": 0.49184,
+      "count": 1
+    },
+    {
+      "text": "cristalización de tales medidas",
+      "relevance": 0.49129,
+      "count": 1
+    },
+    {
+      "text": "Cedula Catastral Carrera",
+      "relevance": 0.49129,
+      "count": 1
+    },
+    {
+      "text": "ELBA FANNY ESCOBAR MUÑOZ",
+      "relevance": 0.487179,
+      "count": 1
+    },
+    {
+      "text": "TERCERO",
+      "relevance": 0.487125,
+      "count": 1
+    },
+    {
+      "text": "VÍCTIMAS",
+      "relevance": 0.485419,
+      "count": 1
+    },
+    {
+      "text": "SAMUEL SECUE CALAMBAS T.I.",
+      "relevance": 0.485232,
+      "count": 1
+    },
+    {
+      "text": "ANGIE SALOME SALAS RIOS T.I.",
+      "relevance": 0.484446,
+      "count": 1
+    },
+    {
+      "text": "MARYI ALEJANDRA RIOS GALVIS T.I",
+      "relevance": 0.484384,
+      "count": 1
+    },
+    {
+      "text": "LINDEROS",
+      "relevance": 0.482309,
+      "count": 1
+    },
+    {
+      "text": "masa sucesoral del causante ALFREDO HERNAN RIOS GALVIS",
+      "relevance": 0.479023,
+      "count": 1
+    },
+    {
+      "text": "madre del solicitante AURA MERCEDES LEYTON c",
+      "relevance": 0.477203,
+      "count": 1
+    },
+    {
+      "text": "JUAN JOSE SALAS RIOS T.JI",
+      "relevance": 0.476436,
+      "count": 1
+    },
+    {
+      "text": "desenglobe de la propiedad del señor JOSE GIOVANNI OSPINA LOPEZ",
+      "relevance": 0.476292,
+      "count": 1
+    },
+    {
+      "text": "ELBA FANY ESCOBAR     E",
+      "relevance": 0.475424,
+      "count": 1
+    },
+    {
+      "text": "acorde",
+      "relevance": 0.474739,
+      "count": 1
+    },
+    {
+      "text": "MILENA CALAMBAS SALAZAR c",
+      "relevance": 0.474726,
+      "count": 1
+    },
+    {
+      "text": "ATENCIÓN",
+      "relevance": 0.474641,
+      "count": 1nN
+    },
+    {
+      "text": "beneficios",
+      "relevance": 0.47412,
+      "count": 1
+    },
+    {
+      "text": "término",
+      "relevance": 0.473785,
+      "count": 1
+    },
+    {
+      "text": "días",
+      "relevance": 0.473647,
+      "count": 1
+    },
+    {
+      "text": "providencia",
+      "relevance": 0.473481,
+      "count": 1
+    },
+    {
+      "text": "órdenes",
+      "relevance": 0.471591,
+      "count": 1
+    },
+    {
+      "text": "derecho",
+      "relevance": 0.470606,
+      "count": 1
+    },
+    {
+      "text": "sentencia",
+      "relevance": 0.470513,
+      "count": 1
+    },
+    {
+      "text": "inmueble",
+      "relevance": 0.47012,
+      "count": 1
+    },
+    {
+      "text": "hijas GINA MARCELA c",
+      "relevance": 0.469417,
+      "count": 1
+    },
+    {
+      "text": "solicitantes",
+      "relevance": 0.469135,
+      "count": 1
+    },
+    {
+      "text": "meses",
+      "relevance": 0.468621,
+      "count": 1
+    },
+    {
+      "text": "años",
+      "relevance": 0.467891,
+      "count": 1
+    },
+    {
+      "text": "restitución",
+      "relevance": 0.467789,
+      "count": 1
+    },
+    {
+      "text": "parte",
+      "relevance": 0.465725,
+      "count": 1
+    },
+    {
+      "text": "Toribio",
+      "relevance": 0.465614,
+      "count": 1
+    }
+  ],
+  "warnings": [
+    "sentiment: target(s) not found"
+  ]
+}

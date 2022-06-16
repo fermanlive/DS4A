@@ -22,9 +22,14 @@ def image2string_easyocr(routefile:str):
 def search_image(directory_str:str):
     directory = os.fsencode(directory_str)
     list_text = {}
+    i = 1
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
+        print(f'Getting text for {filename}')
         if filename.endswith("jpg"): 
             test_raw = image2string_easyocr(directory_str+'/'+filename)
             list_text[filename[:-4]]=test_raw
+        print(f'Text was getting {filename}')
+        print(f'Ready part {i}/{len(os.listdir(directory))}')
+        i = i + 1
     return list_text

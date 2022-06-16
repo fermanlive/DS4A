@@ -1,0 +1,203 @@
+{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 1580,
+    "features": 1
+  },
+  "language": "es",
+  "keywords": [
+    {
+      "text": "derecho fundamental",
+      "relevance": 0.659995,
+      "count": 1
+    },
+    {
+      "text": "cédula de ciudadanía número",
+      "relevance": 0.650161,
+      "count": 2
+    },
+    {
+      "text": "Cueva del Municipio de El Tablón",
+      "relevance": 0.616297,
+      "count": 1
+    },
+    {
+      "text": "línea quebrada",
+      "relevance": 0.611323,
+      "count": 3
+    },
+    {
+      "text": "dirección noreste",
+      "relevance": 0.604875,
+      "count": 1
+    },
+    {
+      "text": "Departamento de Nariño",
+      "relevance": 0.570287,
+      "count": 1
+    },
+    {
+      "text": "respecto del predio rural",
+      "relevance": 0.568318,
+      "count": 1
+    },
+    {
+      "text": "dirección sureste",
+      "relevance": 0.566426,
+      "count": 1
+    },
+    {
+      "text": "restitución de tierras",
+      "relevance": 0.564866,
+      "count": 1
+    },
+    {
+      "text": "dirección suroeste",
+      "relevance": 0.560405,
+      "count": 1
+    },
+    {
+      "text": "condiciones de dignidad",
+      "relevance": 0.553589,
+      "count": 1
+    },
+    {
+      "text": "siguiente manera",
+      "relevance": 0.540504,
+      "count": 1
+    },
+    {
+      "text": "Oficina de Registro de Instrumentos Públicos",
+      "relevance": 0.525527,
+      "count": 2
+    },
+    {
+      "text": "predio de Oswaldo Benavides",
+      "relevance": 0.519411,
+      "count": 1
+    },
+    {
+      "text": "propiedad del inmueble",
+      "relevance": 0.511699,
+      "count": 1
+    },
+    {
+      "text": "predio de Edgar Espinoza",
+      "relevance": 0.501748,
+      "count": 1
+    },
+    {
+      "text": "favor del señor GILDARDO ARVEY BENAVIDES URBANO",
+      "relevance": 0.483607,
+      "count": 1
+    },
+    {
+      "text": "punto",
+      "relevance": 0.483413,
+      "count": 8
+    },
+    {
+      "text": "folio de matrícula inmobiliaria",
+      "relevance": 0.482459,
+      "count": 2
+    },
+    {
+      "text": "predio de Mary Rengifo",
+      "relevance": 0.479944,
+      "count": 1
+    },
+    {
+      "text": "vía de la prescripción extraordinaria adquisitiva de dominio",
+      "relevance": 0.469421,
+      "count": 1
+    },
+    {
+      "text": "señor GILDARDO ARVEY BENAVIDES URBANO",
+      "relevance": 0.463315,
+      "count": 1
+    },
+    {
+      "text": "Pasto",
+      "relevance": 0.460082,
+      "count": 2
+    },
+    {
+      "text": "Cruz",
+      "relevance": 0.459068,
+      "count": 2
+    },
+    {
+      "text": "Partiendo",
+      "relevance": 0.458745,
+      "count": 3
+    },
+    {
+      "text": "vereda",
+      "relevance": 0.45833,
+      "count": 1
+    },
+    {
+      "text": "Victoria",
+      "relevance": 0.457916,
+      "count": 1
+    },
+    {
+      "text": "Corregimiento",
+      "relevance": 0.457475,
+      "count": 1
+    },
+    {
+      "text": "distancia",
+      "relevance": 0.457042,
+      "count": 4
+    },
+    {
+      "text": "Gómez",
+      "relevance": 0.455401,
+      "count": 1
+    },
+    {
+      "text": "metros",
+      "relevance": 0.454727,
+      "count": 4
+    },
+    {
+      "text": "proporción",
+      "relevance": 0.453391,
+      "count": 1
+    },
+    {
+      "text": "hectáreas",
+      "relevance": 0.452712,
+      "count": 1
+    },
+    {
+      "text": "NORTE",
+      "relevance": 0.449518,
+      "count": 1
+    },
+    {
+      "text": "ORIENTE",
+      "relevance": 0.449518,
+      "count": 1
+    },
+    {
+      "text": "Guaico",
+      "relevance": 0.446516,
+      "count": 2
+    },
+    {
+      "text": "SUR",
+      "relevance": 0.44495,
+      "count": 1
+    },
+    {
+      "text": "peña",
+      "relevance": 0.439921,
+      "count": 1
+    }
+  ],
+  "warnings": [
+    "sentiment: target(s) not found"
+  ]
+}

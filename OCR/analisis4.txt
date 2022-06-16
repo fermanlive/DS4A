@@ -1,0 +1,96 @@
+{
+  "usage": {
+    "text_units": 1,
+    "text_characters": 500,
+    "features": 2
+  },
+  "sentiment": {
+    "document": {
+      "score": 0,
+      "label": "neutral"
+    }
+  },
+  "language": "es",
+  "keywords": [
+    {
+      "text": "Municipio de Timbío",
+      "relevance": 0.815278,
+      "count": 1
+    },
+    {
+      "text": "MARINO BARCO GUEVARA",
+      "relevance": 0.68898,
+      "count": 1
+    },
+    {
+      "text": "núcleo familiar",
+      "relevance": 0.686891,
+      "count": 1
+    },
+    {
+      "text": "RESTITUCION MATERIAL",
+      "relevance": 0.642106,
+      "count": 1
+    },
+    {
+      "text": "jurisdicción del Departamento del Cauca",
+      "relevance": 0.583212,
+      "count": 1
+    },
+    {
+      "text": "Vereda Hato Nuevo",
+      "relevance": 0.535495,
+      "count": 1
+    },
+    {
+      "text": "Parcela No",
+      "relevance": 0.524334,
+      "count": 1
+    },
+    {
+      "text": "Oficina de Registro",
+      "relevance": 0.524334,
+      "count": 1
+    },
+    {
+      "text": "A.J.R.O. Exp",
+      "relevance": 0.524334,
+      "count": 1
+    },
+    {
+      "text": "señores ANA",
+      "relevance": 0.469633,
+      "count": 1
+    },
+    {
+      "text": "Fortuna",
+      "relevance": 0.39381,
+      "count": 1
+    },
+    {
+      "text": "CRUZ",
+      "relevance": 0.379925,
+      "count": 1
+    },
+    {
+      "text": "número",
+      "relevance": 0.350459,
+      "count": 1
+    },
+    {
+      "text": "Folio",
+      "relevance": 0.350459,
+      "count": 1
+    },
+    {
+      "text": "predio",
+      "relevance": 0.334678,
+      "count": 1
+    },
+    {
+      "text": "cuaderno",
+      "relevance": 0.334678,
+      "count": 1
+    }
+  ]
+}

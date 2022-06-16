@@ -27,7 +27,7 @@ def download(route:str) -> None:
         makedirs(prefix)
 
     for blob in blobs:
-        if blob.name[-3:] == 'jpg':
+        if blob.name[-3:] == 'jpg' or blob.name[-3:] == 'txt':
             blob_name = blob.name
             dst_file_name = blob_name.replace('FOLDER1/FOLDER2', dl_dir)
             blob.download_to_filename(dst_file_name)  # Download
