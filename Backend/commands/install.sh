@@ -14,4 +14,4 @@ source venv/bin/activate
 pip install -U pip
 
 # Install repository
-#pip install -r requirements.txt
+pip install -r requirements.txt
