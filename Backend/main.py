@@ -13,13 +13,13 @@ async def create_file(file: bytes = File()) -> dict:
     path = "inputs/"
     ext_pdf = ".pdf"
     filename = "filename"
-    with open(f'{path}{filename}', "wb") as file_to_save:
+    with open(f'{path}{filename+ext_pdf}', "wb") as file_to_save:
         file_to_save.write(file)
     launch_pdf_to_image(filename=filename+ext_pdf)
     image_to_text(filename=filename)
     clean_text = inference_start(filename=filename)
     end_preprocessing = time.time()
-    time_processes_file = end_preprocessing-start_preprocessing
+    time_processes_file = int(end_preprocessing-start_preprocessing)
     metrics = {"time_processes_file": time_processes_file}
     return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
 
