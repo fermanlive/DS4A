@@ -5,7 +5,7 @@ import json
 # import easyocr
 import time
 
-reader = easyocr.Reader(['es']) # this needs to run only once to load the model into memory
+# reader = easyocr.Reader(['es']) # this needs to run only once to load the model into memory
 
 def image2string(routefile:str):
     img = Image.open(routefile) # Abre la imagen con pillow

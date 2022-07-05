@@ -2,39 +2,46 @@ from fastapi import FastAPI, File
 import uvicorn
 from routers import orquestador
 import json 
+import time
+
 app = FastAPI()
 
 
 @app.post("/files/")
-async def create_file(file: bytes = File()):
+async def create_file(file: bytes = File()) -> dict:
+    start_preprocessing = time.time()
     path = "inputs/"
-    filename = "filename.pdf"
+    ext_pdf = ".pdf"
+    filename = "filename"
     with open(f'{path}{filename}', "wb") as file_to_save:
         file_to_save.write(file)
-    return {"message": f"the file {filename} was saved!", "filename": filename}
+    launch_pdf_to_image(filename=filename+ext_pdf)
+    image_to_text(filename=filename)
+    clean_text = inference_start(filename=filename)
+    end_preprocessing = time.time()
+    time_processes_file = end_preprocessing-start_preprocessing
+    metrics = {"time_processes_file": time_processes_file}
+    return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
 
-
-@app.post("/pdf_to_image/")
-async def launch_pdf_to_image(filename: str):
+def launch_pdf_to_image(filename: str):
     orquestador.pdf_2_image(filename)
     return {"message": "The images was created by the pdf file"}
 
-@app.post("/image_to_text/")
-async def image_to_text(filename: str):
+def image_to_text(filename: str):
     orquestador.image_2_text(filename)
     return {"message": f"the file {filename}.txt was saved!", "filename": f"{filename}.txt"}
 
-@app.post("/inference_start/")
-async def inference_start(filename: str):
+def inference_start(filename: str):
     path = "output_txt/"
-    with open(path+filename) as f:
+    ext_txt = ".txt"
+    with open(path+filename+ext_txt) as f:
         lines = f.readlines()
         lines=lines[0]
         lines = json.loads(lines)
         dictionary_file = renaming_keys(lines)
         nested_text = concat_text_sentence(dictionary_file)
         clean_text = get_clean_text(nested_text)
-    return {"message": f"The text obtain {clean_text}"}
+    return clean_text
 
 
 def renaming_keys(lines):
