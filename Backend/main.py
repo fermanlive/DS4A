@@ -3,14 +3,17 @@ import uvicorn
 from routers import orquestador
 import json 
 import time
+import os
+
+basepath = str(os.path.abspath(os.getcwd()))
 
 app = FastAPI()
 
 
-@app.post("/files/")
+@app.post("/start_inference/")
 async def create_file(file: bytes = File()) -> dict:
     start_preprocessing = time.time()
-    path = "inputs/"
+    path = basepath+"/inputs/"
     ext_pdf = ".pdf"
     filename = "filename"
     with open(f'{path}{filename+ext_pdf}', "wb") as file_to_save:

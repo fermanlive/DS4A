@@ -1,13 +1,15 @@
 from pdf2image import convert_from_path
 import os
 
+basepath = str(os.path.abspath(os.getcwd()))
+
 def pdf_2_image(routefile:str,filename:str):
     # Store Pdf with convert_from_path function
-    images = convert_from_path(routefile)
+    images = convert_from_path(basepath+'/'+routefile)
 
     for i in range(len(images)):
         # Save pages as images in the pdf
-        parent_dir = "output_images"
+        parent_dir = basepath+"/output_images"
         directory = filename[:-4]
         create_dir(parent_dir,directory)
         route = f'{parent_dir}/{directory}/page'+ str(i) 
