@@ -10,6 +10,7 @@ basepath = str(os.path.abspath(os.getcwd()))
 app = FastAPI()
 
 
+
 @app.post("/start_inference/")
 async def create_file(file: bytes = File()) -> dict:
     start_preprocessing = time.time()
@@ -24,6 +25,7 @@ async def create_file(file: bytes = File()) -> dict:
     end_preprocessing = time.time()
     time_processes_file = int(end_preprocessing-start_preprocessing)
     metrics = {"time_processes_file": time_processes_file}
+    os.system('./commands/flush_and_create.sh')
     return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
 
 def launch_pdf_to_image(filename: str):
