@@ -3,6 +3,7 @@ from routers import orquestador
 import json 
 import time
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 basepath = str(os.path.abspath(os.getcwd()))
 
@@ -10,6 +11,15 @@ from fastapi import FastAPI, File, UploadFile
 
 app = FastAPI()
 
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/files/")
 async def create_file(file: bytes = File()):
