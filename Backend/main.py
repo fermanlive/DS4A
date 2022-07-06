@@ -1,4 +1,3 @@
-from fastapi import FastAPI, File
 import uvicorn
 from routers import orquestador
 import json 
@@ -6,6 +5,8 @@ import time
 import os
 
 basepath = str(os.path.abspath(os.getcwd()))
+
+from fastapi import FastAPI, File, UploadFile
 
 app = FastAPI()
 
@@ -25,10 +26,12 @@ async def create_file(file: bytes = File()):
     time_processes_file = int(end_preprocessing-start_preprocessing)
     metrics = {"time_processes_file": time_processes_file}
     os.system('./commands/flush_and_create.sh')
-    return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
+    message = generate_metrics()
+    return message
+    # return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
 
-@app.post("/files_dummy/")
-async def create_file(file: bytes = File()):
+
+def generate_metrics():
     metrics = {"time_processes_file": 100, "inference_time": 300 , "time_updated":300}
     victimary = {"AUC":0.9, "Farc": 0.4 , "ELN": 0.1}
     desition = {"Aprobada":0.44, "aprobado y restituida": 0.11}
