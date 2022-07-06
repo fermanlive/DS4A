@@ -10,9 +10,8 @@ basepath = str(os.path.abspath(os.getcwd()))
 app = FastAPI()
 
 
-
-@app.post("/start_inference/")
-async def create_file(file: bytes = File()) -> dict:
+@app.post("/files/")
+async def create_file(file: bytes = File()):
     start_preprocessing = time.time()
     path = basepath+"/inputs/"
     ext_pdf = ".pdf"
