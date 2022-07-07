@@ -41,9 +41,11 @@ async def create_file(file: bytes = File()):
 
     ####Preprocesamiento para el modelo y vectorizacion
     start_inference = time.time()
+    print("Start inference")
     result = orquestador.inference(list_features)
     end_inference = time.time()
     inference_time = int(end_inference - start_inference)
+    print(f"Finished inference inference, time: {int(inference_time)} seconds")
     time_processes_file = int(end_preprocessing - start_preprocessing)
     metrics = {
         "time_processes_file": time_processes_file,
