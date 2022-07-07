@@ -182,7 +182,7 @@ def inference(list_features):
         list_features["list_ubicacion"], columns=["Sentencia"]
     )
 
-    # df_victimario_test["Sentencia_cleaned"] = df_victimario_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_victimario_test["Sentencia_cleaned"] = df_victimario_test["Sentencia"].apply(lambda x: process_paragraph(x))
     df_perdida_test["Sentencia_cleaned"] = df_perdida_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
@@ -190,7 +190,7 @@ def inference(list_features):
     df_decision_test["Sentencia_cleaned"] = df_decision_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
-    # df_ubicacion_test["Sentencia_cleaned"] = df_ubicacion_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_ubicacion_test["Sentencia_cleaned"] = df_ubicacion_test["Sentencia"].apply(lambda x: process_paragraph(x))
 
     filename_model = "fitted_model_decision.pkl"
     filename_transformer = "transformer_model_decision.pkl"
@@ -213,12 +213,26 @@ def inference(list_features):
     )
     result_solicitante = get_top_5(dict_solicitante, df_solicitante_test)
 
+    filename_model = "fitted_model_victimario.pkl"
+    filename_transformer = "transformer_model_victimario.pkl"
+    dict_victimario = inference_model(
+        df_victimario_test["Sentencia_cleaned"], filename_model, filename_transformer
+    )
+    result_victimario = get_top_5(dict_victimario, df_victimario_test)
+
+    filename_model = "fitted_model_ubicacion.pkl"
+    filename_transformer = "transformer_model_ubicacion.pkl"
+    dict_ubicacion = inference_model(
+        df_ubicacion_test["Sentencia_cleaned"], filename_model, filename_transformer
+    )
+    result_ubicacion = get_top_5(dict_ubicacion, df_ubicacion_test)
+
     result_features = {
         "result_decision": result_decision,
         "result_perdida": result_perdida,
         "result_solicitante": result_solicitante,
-        "result_ubicacion": {},
-        "result_victimario": {},
+        "result_ubicacion": result_ubicacion,
+        "result_victimario": result_victimario
     }
 
     return result_features
