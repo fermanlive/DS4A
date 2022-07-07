@@ -4,8 +4,10 @@ import nltk
 import numpy as np
 import pandas as pd
 import lightgbm as lgb
+
 # import seaborn as sn
 import language_tool_python
+
 # import matplotlib.pyplot as plt
 from nltk.corpus import stopwords, wordnet
 from nltk.tokenize import WordPunctTokenizer
@@ -16,9 +18,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import sklearn.metrics as metrics
 from sklearn.pipeline import Pipeline
 
-tool = language_tool_python.LanguageTool('es-US')
-stemmer = SnowballStemmer('spanish')
-nltk.download('stopwords')
+tool = language_tool_python.LanguageTool("es-US")
+stemmer = SnowballStemmer("spanish")
+nltk.download("stopwords")
+
 
 def renaming_keys(lines):
     for i in range(len(lines)):
@@ -61,9 +64,11 @@ def get_list_text_subextract(
             list_text_subextract.append(clean_text[start:end])
     return list_text_subextract
 
+
 # Deifining key functions #
 
 # Preprocessing paragraphs #
+
 
 def process_paragraph(paragraph):
     """
@@ -76,23 +81,23 @@ def process_paragraph(paragraph):
     def text_cleaning(text_to_clean):
         """
         This function cleans the text data
-         """
+        """
         text_to_clean = preprocessing.remove.punctuation(text_to_clean)
         text_to_clean = preprocessing.remove.accents(text_to_clean)
         text_to_clean = preprocessing.normalize.whitespace(text_to_clean)
         text_to_clean = preprocessing.normalize.unicode(text_to_clean)
         return text_to_clean
-    
+
     # Function for removing stopwords #
     def stopword(string):
-        a = [i for i in string.split() if i not in stopwords.words('spanish')]
-        return ' '.join(a)
+        a = [i for i in string.split() if i not in stopwords.words("spanish")]
+        return " ".join(a)
 
     # Stemming the paragraph #
     def stemming(text_to_process):
-        return ' '.join([ stemmer.stem(i) for i in text_to_process.split() ])
+        return " ".join([stemmer.stem(i) for i in text_to_process.split()])
 
     # Correcting the input pragraph #
-    new_paragraph =  stemming(stopword(text_cleaning(tool.correct(paragraph))))
+    new_paragraph = stemming(stopword(text_cleaning(tool.correct(paragraph))))
 
     return new_paragraph

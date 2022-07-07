@@ -45,10 +45,17 @@ async def create_file(file: bytes = File()):
     end_inference = time.time()
     inference_time = int(end_inference - start_inference)
     time_processes_file = int(end_preprocessing - start_preprocessing)
-    metrics = {"time_processes_file": time_processes_file,"inference_time":inference_time}
+    metrics = {
+        "time_processes_file": time_processes_file,
+        "inference_time": inference_time,
+    }
     os.system("./commands/flush_and_create.sh")
     # return list_features
-    return {"message": "The process was sucesfully", "result_inference" : result , "metrics": metrics}
+    return {
+        "message": "The process was sucesfully",
+        "result_inference": result,
+        "metrics": metrics,
+    }
 
 
 def launch_pdf_to_image(filename: str):

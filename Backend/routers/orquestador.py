@@ -9,7 +9,7 @@ from routers.preprocessing_features import (
     concat_text_sentence,
     get_clean_text,
     get_list_text_subextract,
-    process_paragraph
+    process_paragraph,
 )
 
 from routers.inference_model import inference_model, get_top_5
@@ -168,34 +168,55 @@ def extract_features(clean_text: str):
 
 
 def inference(list_features):
-    df_victimario_test = pd.DataFrame(list_features["list_victimario"], columns =['Sentencia'])
-    df_perdida_test = pd.DataFrame(list_features["list_perdida"], columns =['Sentencia'])
-    df_solicitante_test = pd.DataFrame(list_features["list_solicitante"], columns =['Sentencia'])
-    df_decision_test = pd.DataFrame(list_features["list_decision"], columns =['Sentencia'])
-    df_ubicacion_test = pd.DataFrame(list_features["list_ubicacion"], columns =['Sentencia'])
-    
+    df_victimario_test = pd.DataFrame(
+        list_features["list_victimario"], columns=["Sentencia"]
+    )
+    df_perdida_test = pd.DataFrame(list_features["list_perdida"], columns=["Sentencia"])
+    df_solicitante_test = pd.DataFrame(
+        list_features["list_solicitante"], columns=["Sentencia"]
+    )
+    df_decision_test = pd.DataFrame(
+        list_features["list_decision"], columns=["Sentencia"]
+    )
+    df_ubicacion_test = pd.DataFrame(
+        list_features["list_ubicacion"], columns=["Sentencia"]
+    )
+
     # df_victimario_test["Sentencia_cleaned"] = df_victimario_test["Sentencia"].apply(lambda x: process_paragraph(x))
-    df_perdida_test["Sentencia_cleaned"] = df_perdida_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_perdida_test["Sentencia_cleaned"] = df_perdida_test["Sentencia"].apply(
+        lambda x: process_paragraph(x)
+    )
     # df_solicitante_test["Sentencia_cleaned"] = df_solicitante_test["Sentencia"].apply(lambda x: process_paragraph(x))
-    df_decision_test["Sentencia_cleaned"] = df_decision_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_decision_test["Sentencia_cleaned"] = df_decision_test["Sentencia"].apply(
+        lambda x: process_paragraph(x)
+    )
     # df_ubicacion_test["Sentencia_cleaned"] = df_ubicacion_test["Sentencia"].apply(lambda x: process_paragraph(x))
 
     filename_model = "fitted_model_decision.pkl"
     filename_transformer = "transformer_model_decision.pkl"
-    dict_decision=inference_model(df_decision_test["Sentencia_cleaned"],filename_model,filename_transformer)
-    result_decision = get_top_5(dict_decision,df_decision_test)
+    dict_decision = inference_model(
+        df_decision_test["Sentencia_cleaned"], filename_model, filename_transformer
+    )
+    result_decision = get_top_5(dict_decision, df_decision_test)
 
     filename_model = "fitted_model_perdida.pkl"
     filename_transformer = "transformer_model_perdida.pkl"
-    dict_perdida=inference_model(df_perdida_test["Sentencia_cleaned"],filename_model,filename_transformer)
-    result_perdida = get_top_5(dict_perdida,df_perdida_test)
+    dict_perdida = inference_model(
+        df_perdida_test["Sentencia_cleaned"], filename_model, filename_transformer
+    )
+    result_perdida = get_top_5(dict_perdida, df_perdida_test)
 
     filename_model = "transformer_model_solicitante.pkl"
     filename_transformer = "transformer_model_solicitante.pkl"
-    dict_solicitante=inference_model(df_solicitante_test["Sentencia_cleaned"],filename_model,filename_transformer)
-    result_solicitante = get_top_5(dict_solicitante,df_solicitante_test)
+    dict_solicitante = inference_model(
+        df_solicitante_test["Sentencia_cleaned"], filename_model, filename_transformer
+    )
+    result_solicitante = get_top_5(dict_solicitante, df_solicitante_test)
 
-    result_features = {"result_decision":result_decision, "result_perdida":result_perdida, "result_solicitante":result_solicitante} 
+    result_features = {
+        "result_decision": result_decision,
+        "result_perdida": result_perdida,
+        "result_solicitante": result_solicitante,
+    }
 
     return result_features
-
