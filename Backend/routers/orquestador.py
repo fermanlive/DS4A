@@ -206,7 +206,7 @@ def inference(list_features):
     )
     result_perdida = get_top_5(dict_perdida, df_perdida_test)
 
-    filename_model = "transformer_model_solicitante.pkl"
+    filename_model = "fitted_model_solicitante.pkl"
     filename_transformer = "transformer_model_solicitante.pkl"
     dict_solicitante = inference_model(
         df_solicitante_test["Sentencia_cleaned"], filename_model, filename_transformer
@@ -217,6 +217,8 @@ def inference(list_features):
         "result_decision": result_decision,
         "result_perdida": result_perdida,
         "result_solicitante": result_solicitante,
+        "result_ubicacion": {},
+        "result_victimario": {},
     }
 
     return result_features
