@@ -182,15 +182,21 @@ def inference(list_features):
         list_features["list_ubicacion"], columns=["Sentencia"]
     )
 
-    df_victimario_test["Sentencia_cleaned"] = df_victimario_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_victimario_test["Sentencia_cleaned"] = df_victimario_test["Sentencia"].apply(
+        lambda x: process_paragraph(x)
+    )
     df_perdida_test["Sentencia_cleaned"] = df_perdida_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
-    df_solicitante_test["Sentencia_cleaned"] = df_solicitante_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_solicitante_test["Sentencia_cleaned"] = df_solicitante_test["Sentencia"].apply(
+        lambda x: process_paragraph(x)
+    )
     df_decision_test["Sentencia_cleaned"] = df_decision_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
-    df_ubicacion_test["Sentencia_cleaned"] = df_ubicacion_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_ubicacion_test["Sentencia_cleaned"] = df_ubicacion_test["Sentencia"].apply(
+        lambda x: process_paragraph(x)
+    )
 
     filename_model = "fitted_model_decision.pkl"
     filename_transformer = "transformer_model_decision.pkl"
@@ -232,7 +238,7 @@ def inference(list_features):
         "result_perdida": result_perdida,
         "result_solicitante": result_solicitante,
         "result_ubicacion": result_ubicacion,
-        "result_victimario": result_victimario
+        "result_victimario": result_victimario,
     }
 
     return result_features
