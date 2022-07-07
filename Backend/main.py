@@ -1,13 +1,15 @@
-import uvicorn
-from routers import orquestador
-import json 
-import time
+import json
 import os
+import time
+
+import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
+
+from routers import orquestador
 
 basepath = str(os.path.abspath(os.getcwd()))
 
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File
 
 app = FastAPI()
 
@@ -21,76 +23,60 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.post("/files/")
 async def create_file(file: bytes = File()):
     start_preprocessing = time.time()
-    path = basepath+"/inputs/"
+    ####Preprocesamiento texto
+    path = basepath + "/inputs/"
     ext_pdf = ".pdf"
     filename = "filename"
-    with open(f'{path}{filename+ext_pdf}', "wb") as file_to_save:
+    with open(f"{path}{filename+ext_pdf}", "wb") as file_to_save:
         file_to_save.write(file)
-    launch_pdf_to_image(filename=filename+ext_pdf)
+    launch_pdf_to_image(filename=filename + ext_pdf)
     image_to_text(filename=filename)
-    clean_text = inference_start(filename=filename)
+    clean_text = orquestador.get_complete_clean_text(filename=filename)
+    list_features = orquestador.extract_features(clean_text)
     end_preprocessing = time.time()
-    time_processes_file = int(end_preprocessing-start_preprocessing)
-    metrics = {"time_processes_file": time_processes_file}
-    os.system('./commands/flush_and_create.sh')
+
+    ####Preprocesamiento para el modelo y vectorizacion
+    start_inference = time.time()
+    result = orquestador.inference(list_features)
+    end_inference = time.time()
+    inference_time = int(end_inference - start_inference)
+    time_processes_file = int(end_preprocessing - start_preprocessing)
+    metrics = {"time_processes_file": time_processes_file,"inference_time":inference_time}
+    os.system("./commands/flush_and_create.sh")
     message = generate_metrics()
-    return message
-    # return {"message": "The process was sucesfully", "text" : clean_text , "metrics": metrics}
+    # return list_features
+    return {"message": "The process was sucesfully", "result_inference" : result , "metrics": metrics}
 
 
 def generate_metrics():
-    metrics = {"time_processes_file": 100, "inference_time": 300 , "time_updated":300}
-    victimary = {"AUC":0.9, "Farc": 0.4 , "ELN": 0.1}
-    desition = {"Aprobada":0.44, "aprobado y restituida": 0.11}
-    motivo = {"abandono":0.21, "abandono y retoma": 0.11}
-    values = {"victimary":victimary, "desition":desition, "motivo":motivo}
-    return {"message": "The process was sucesfully", "values" : values , "metrics": metrics}
+    metrics = {"time_processes_file": 100, "inference_time": 300, "time_updated": 300}
+    victimary = {"AUC": 0.9, "Farc": 0.4, "ELN": 0.1}
+    desition = {"Aprobada": 0.44, "aprobado y restituida": 0.11}
+    motivo = {"abandono": 0.21, "abandono y retoma": 0.11}
+    values = {"victimary": victimary, "desition": desition, "motivo": motivo}
+    return {
+        "message": "The process was sucesfully",
+        "values": values,
+        "metrics": metrics,
+    }
+
 
 def launch_pdf_to_image(filename: str):
     orquestador.pdf_2_image(filename)
     return {"message": "The images was created by the pdf file"}
 
+
 def image_to_text(filename: str):
     orquestador.image_2_text(filename)
-    return {"message": f"the file {filename}.txt was saved!", "filename": f"{filename}.txt"}
+    return {
+        "message": f"the file {filename}.txt was saved!",
+        "filename": f"{filename}.txt",
+    }
 
-def inference_start(filename: str):
-    path = "output_txt/"
-    ext_txt = ".txt"
-    with open(path+filename+ext_txt) as f:
-        lines = f.readlines()
-        lines=lines[0]
-        lines = json.loads(lines)
-        dictionary_file = renaming_keys(lines)
-        nested_text = concat_text_sentence(dictionary_file)
-        clean_text = get_clean_text(nested_text)
-    return clean_text
-
-
-def renaming_keys(lines):
-    for i in range(len(lines)):
-        lines[i] = lines[f"page"+str(i)]
-        del lines[f"page"+str(i)]
-    return lines
-
-def concat_text_sentence(dictionary_file):
-    nested_text = ""
-    for key, value in sorted(dictionary_file.items(), key=lambda item: int(item[0])):
-        nested_text = nested_text+" "+dictionary_file[key] 
-    return nested_text
-
-def get_clean_text(nested_text):
-    nested_text = nested_text.replace('\n', '')
-    nested_text = nested_text.lower()
-    import unicodedata
-    nested_text_1 = nested_text.replace("ñ", "#").replace("Ñ", "%")
-    clean_text = unicodedata.normalize("NFKD", nested_text_1)\
-        .encode("ascii","ignore").decode("ascii")\
-        .replace("#", "ñ").replace("%", "Ñ")
-    return clean_text
 
 if __name__ == "__main__":
     uvicorn.run(app)
