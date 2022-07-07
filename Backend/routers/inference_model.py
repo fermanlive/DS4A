@@ -17,10 +17,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import sklearn.metrics as metrics
 from sklearn.pipeline import Pipeline
 import pickle
+import os
+
+basepath = str(os.path.abspath(os.getcwd()))
 
 def inference_model(series,filename_model,filename_transformer):
-    path_model ="/outputs/models/"
-    path_transformer = "/outputs/transformers/"
+    path_model = f"{basepath}/outputs/models/"
+    path_transformer = f"{basepath}/outputs/transformers/"
     model = pickle.load(open(path_model+filename_model,'rb'))
     tfidf_vectorizer = pickle.load(open(path_transformer+filename_transformer,'rb'))
     # Vecotrizing column text using tfidf #
