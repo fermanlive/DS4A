@@ -186,7 +186,7 @@ def inference(list_features):
     df_perdida_test["Sentencia_cleaned"] = df_perdida_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
-    # df_solicitante_test["Sentencia_cleaned"] = df_solicitante_test["Sentencia"].apply(lambda x: process_paragraph(x))
+    df_solicitante_test["Sentencia_cleaned"] = df_solicitante_test["Sentencia"].apply(lambda x: process_paragraph(x))
     df_decision_test["Sentencia_cleaned"] = df_decision_test["Sentencia"].apply(
         lambda x: process_paragraph(x)
     )
