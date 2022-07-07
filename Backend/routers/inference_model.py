@@ -19,8 +19,8 @@ from sklearn.pipeline import Pipeline
 import pickle
 
 def inference_model(series,filename_model,filename_transformer):
-    path_model ="/Users/dmurcia/Documents/personal/DS4A/Proyecto final/DS4A/Backend/outputs/models/"
-    path_transformer = "/Users/dmurcia/Documents/personal/DS4A/Proyecto final/DS4A/Backend/outputs/transformers/"
+    path_model ="/outputs/models/"
+    path_transformer = "/outputs/transformers/"
     model = pickle.load(open(path_model+filename_model,'rb'))
     tfidf_vectorizer = pickle.load(open(path_transformer+filename_transformer,'rb'))
     # Vecotrizing column text using tfidf #
