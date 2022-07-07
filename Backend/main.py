@@ -47,22 +47,8 @@ async def create_file(file: bytes = File()):
     time_processes_file = int(end_preprocessing - start_preprocessing)
     metrics = {"time_processes_file": time_processes_file,"inference_time":inference_time}
     os.system("./commands/flush_and_create.sh")
-    message = generate_metrics()
     # return list_features
     return {"message": "The process was sucesfully", "result_inference" : result , "metrics": metrics}
-
-
-def generate_metrics():
-    metrics = {"time_processes_file": 100, "inference_time": 300, "time_updated": 300}
-    victimary = {"AUC": 0.9, "Farc": 0.4, "ELN": 0.1}
-    desition = {"Aprobada": 0.44, "aprobado y restituida": 0.11}
-    motivo = {"abandono": 0.21, "abandono y retoma": 0.11}
-    values = {"victimary": victimary, "desition": desition, "motivo": motivo}
-    return {
-        "message": "The process was sucesfully",
-        "values": values,
-        "metrics": metrics,
-    }
 
 
 def launch_pdf_to_image(filename: str):
