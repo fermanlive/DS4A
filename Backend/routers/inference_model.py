@@ -40,13 +40,15 @@ def get_top_5(test_pred, df):
     # asociar predicion
     i = 0
     ind = np.argpartition(test_pred[:, 1], -6)[-6:]
-    probability = test_pred[:, 1][ind]
     result_inference = {}
+    partial_result = {}
     for value in ind:
-        sentencia = df["Sentencia"][value]
-        decimal_probability = int(probability[i]*100)
+        decimal_probability = int(test_pred[:, 1][value]*100)
+        partial_result[value] = decimal_probability
+    for k in sorted(partial_result, key=d.get, reverse=True):
+        sentencia = df["Sentencia"][k]
         result_inference[i] = {
-            "probability": {decimal_probability},
+            "probability": {partial_result[k]},
             "sentencia": {sentencia},
         }
         i = i + 1
