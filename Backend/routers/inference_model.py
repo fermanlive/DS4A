@@ -45,7 +45,7 @@ def get_top_5(test_pred, df):
     for value in ind:
         decimal_probability = int(test_pred[:, 1][value] * 100)
         partial_result[value] = decimal_probability
-    for k in sorted(partial_result, key=d.get, reverse=True):
+    for k in sorted(partial_result, key=partial_result.get, reverse=True):
         sentencia = df["Sentencia"][k]
         result_inference[i] = {
             "probability": {partial_result[k]},
