@@ -3,8 +3,8 @@ import Icon1 from '../../images/undraw_walking_around_25f5.png'
 import IconArturo from '../../images/us/me.png'
 import IconMartin from '../../images/us/martin.png'
 import IconDaniel from '../../images/us/daniel.PNG'
-import IconDavid from '../../images/us/david.jpeg'
-import IconJuan from '../../images/us/juan.PNG'
+import IconDavid from '../../images/us/david2.PNG'
+import IconJohana from '../../images/us/johana1.PNG'
 import { ServicesContainer, ServicesWrapper, ServicesH1, ServicesH2, ServicesCard,ServicesP, ServicesIcon } from './ServicesElements'
 
 const Services = () => {
@@ -48,8 +48,8 @@ const Services = () => {
                         Bioingeniero | Gestor CTeI
                     </ServicesP>
                 </ServicesCard>
-                <ServicesCard href = ''>
-                    <ServicesIcon src={Icon1}/>
+                <ServicesCard href = 'https://www.linkedin.com/in/johannayama/'>
+                    <ServicesIcon src={IconJohana}/>
                     <ServicesH2>
                         Johanna Yama
                     </ServicesH2>
