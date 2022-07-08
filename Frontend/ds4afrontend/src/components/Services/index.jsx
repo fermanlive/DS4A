@@ -3,6 +3,7 @@ import Icon1 from '../../images/undraw_walking_around_25f5.png'
 import IconArturo from '../../images/us/me.png'
 import IconMartin from '../../images/us/martin.png'
 import IconDaniel from '../../images/us/daniel.PNG'
+import IconDavid from '../../images/us/david.jpeg'
 import IconJuan from '../../images/us/juan.PNG'
 import { ServicesContainer, ServicesWrapper, ServicesH1, ServicesH2, ServicesCard,ServicesP, ServicesIcon } from './ServicesElements'
 
@@ -39,7 +40,7 @@ const Services = () => {
                     </ServicesP>
                 </ServicesCard>
                 <ServicesCard href = 'https://www.linkedin.com/in/david-alexander-urrego-higuita-54675741/'>
-                    <ServicesIcon src={Icon1}/>
+                    <ServicesIcon src={IconDavid}/>
                     <ServicesH2>
                         David Urrego
                     </ServicesH2>

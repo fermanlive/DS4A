@@ -34,7 +34,7 @@ const HeroSection = () => {
             Carga aqui documento tu y mira la sintesis de la sentencia deseada.
           </HeroP>
           <HeroBtnWrapper>
-            <Button to='signup' 
+            <Button to='/upload' 
                     onMouseEnter={onHover} 
                     onMouseLeave={onHover}
                     primary='true'

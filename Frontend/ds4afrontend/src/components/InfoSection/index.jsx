@@ -15,7 +15,7 @@ const InfoSection = ({lightBg,id,imgStart,topLine,lightText,darkText,description
                             <Heading lightText={lightText}>{heading}</Heading>
                             <Subtitle darkText={darkText}>{description}</Subtitle>
                             <BtnWrap>
-                                <Button to='home'
+                                {/* <Button to='/upload'
                                         smooth={true}
                                         duration={500}
                                         spy={true}
@@ -23,7 +23,7 @@ const InfoSection = ({lightBg,id,imgStart,topLine,lightText,darkText,description
                                         offset={-80}
                                         primary={primary ? 1 : 0}
                                         dark={dark ? 1 : 0}
-                                        dark2={dark2 ? 1 : 0}>{buttonLabel}</Button>
+                                        dark2={dark2 ? 1 : 0}>{buttonLabel}</Button> */}
                                         
                             </BtnWrap>
                         </TextWrapper>

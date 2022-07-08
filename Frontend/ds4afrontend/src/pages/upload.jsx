@@ -101,10 +101,10 @@ const Upload = () => {
             <Sidebar isOpen={isOpen} toggle={toggle}/>
             <Navbar toggle={toggle}/>
             <UploadContainer>
-                <UploadH1> Cargar el archivo para extraccion de Caracteristicas</UploadH1>
+                <UploadH1> Cargar el archivo para extracción de Caracteristicas</UploadH1>
 
                 <div>
-                    <UploadH4>Subir el archivo de la respectiva sentencia, esperar la respuesta y despues dar click sobre cada uno de los respectivos porcentajes para obtener el fragmento de texto que hace que el modelo decidio en el porcentaje mostrado como la feature deseda.</UploadH4>
+                    <UploadH4>Subir el archivo de la sentencia a analizar, esperar la respuesta y despues dar click sobre cada uno de los respectivos porcentajes para obtener el fragmento de texto extraido que segun el modelo puede tener la caracteristica buscada.</UploadH4>
                 </div>
                 <div>    
                     <UploadButton1 id="fileInput" type="file"  onChange={onFileChange}/>

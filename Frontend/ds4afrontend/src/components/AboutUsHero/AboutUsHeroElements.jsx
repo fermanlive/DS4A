@@ -21,6 +21,7 @@ export const HeroBg = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
+    padding-left: 10%
 `
 
 export const HeroH1 = styled.h1`
@@ -40,7 +41,7 @@ export const HeroH1 = styled.h1`
 `
 
 export const HeroP = styled.p`
-    margin-top: 24px;
+    margin-top: 0px;
     color: #282828;
     font-size: 24px;
     text-align: left;
