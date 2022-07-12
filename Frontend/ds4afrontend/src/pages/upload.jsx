@@ -105,6 +105,7 @@ const Upload = () => {
 
                 <div>
                     <UploadH4>Subir el archivo de la sentencia a analizar, esperar la respuesta y despues dar click sobre cada uno de los respectivos porcentajes para obtener el fragmento de texto extraido que segun el modelo puede tener la caracteristica buscada.</UploadH4>
+                    <UploadH4>Debido a la cuota de computo se recomieda descargar y usar sentencias con una cantidad de paginas inferior a 30 como los siguientes: <a target="_blank" href="https://drive.google.com/file/d/1e-UjApAeelixpTHRKH1c3ndyaeKbuM_4/view?usp=sharing">pdf</a></UploadH4>
                 </div>
                 <div>    
                     <UploadButton1 id="fileInput" type="file"  onChange={onFileChange}/>
