@@ -1,10 +1,12 @@
 # Terretorno
 ## Extract features sentences using NLP
+![image info](./docs/images/logo2.png)
 
-Backend -> FastApi, Python
-Frontend -> React, NodeJS
+## 👩‍💻 Stack Tecnologies
 
-URL Repo -> https://github.com/fermanlive/DS4A
+Backend -> FastApi, Python.
+Frontend -> React, NodeJS.
+Models -> Supervised model Using xgboost.
 
 ## 🎢 project structure
 
@@ -17,3 +19,8 @@ URL Repo -> https://github.com/fermanlive/DS4A
         ├── NLPtest                <-  folder where the trainings are located
         │
         ├── Develop                <-  Colder where the algorithms for the model and its stages were developed
+
+## 🏗️ Architecture
+
+![Architecture](./docs/images/archicture.png)
+
