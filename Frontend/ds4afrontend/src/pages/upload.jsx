@@ -69,7 +69,7 @@ const Upload = () => {
         // Details of the uploaded file
         // Request made to the backend api
         // Send formData object
-        const response = await fetch("http://161.35.233.197:8000/files/", {
+        const response = await fetch("http://127.0.0.1:8000/files/", {
             method: 'POST',
             body: formData,
         }).then(res => res.json());

@@ -1,6 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:8000/files/"
+url = "http://0.0.0.0:8000/files/"
 
 payload = {}
 files = [
